@@ -5,78 +5,53 @@ export default function Home() {
     <main
       className="min-h-screen flex items-center justify-center bg-cover bg-center"
       style={{
-        backgroundImage: `url('/icons/fondo.gif')`,
-        backgroundColor: '#1a1a1a',
+        backgroundImage: `url('/icons/fondo.jpg')`, // Cambié a .jpg para un fondo estático como en la imagen
+        backgroundColor: '#2a2a2a', // Fondo oscuro similar al de la imagen
       }}
     >
-      <div className="relative w-full max-w-4xl flex flex-col items-center text-center text-white p-4">
-        {/* Logo con Brillo Mágico */}
-        <div className="relative w-64 h-64 mb-4 filter drop-shadow-[0_0_10px_rgba(0,255,255,0.7)] animate-pulse">
-          <Image
-            src="/icons/logo.png"
-            alt="LunaticMc Logo"
-            layout="fill"
-            objectFit="contain"
-            priority
-          />
+      <div className="relative w-full max-w-4xl h-screen flex flex-row text-white p-4">
+        {/* Menú Vertical Izquierdo */}
+        <div className="w-1/4 bg-gray-800 p-4 rounded-lg shadow-lg h-full flex flex-col justify-start gap-4">
+          <a href="#informacion" className="text-lg font-pixel hover:text-cyan-400">Información</a>
+          <a href="#ayuda" className="text-lg font-pixel hover:text-cyan-400">Ayuda</a>
+          <a href="#soporte" className="text-lg font-pixel hover:text-cyan-400">Soporte</a>
+          <a href="#sugerencias" className="text-lg font-pixel hover:text-cyan-400">Sugerencias</a>
         </div>
 
-        {/* Título con Brillo Mágico */}
-        <h1 className="text-5xl font-pixel text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 filter drop-shadow-[0_0_5px_rgba(255,255,0,0.7)] mb-2">
-          LunaticMc NETWORK <span className="text-cyan-400">1.20+ → 1.21</span>
-        </h1>
-        <p className="text-xl font-pixel text-yellow-300 filter drop-shadow-[0_0_3px_rgba(255,255,0,0.5)] mb-4">
-          Magia, Aventuras, Locura Personalizada
-        </p>
+        {/* Contenido Central */}
+        <div className="w-3/4 p-6 flex flex-col items-center justify-center">
+          {/* Logo */}
+          <div className="absolute top-4 left-4 w-20 h-20 filter drop-shadow-[0_0_10px_rgba(0,255,255,0.7)] animate-pulse">
+            <Image
+              src="/icons/logo.png"
+              alt="LunaticMc Logo"
+              layout="fill"
+              objectFit="contain"
+              priority
+            />
+          </div>
 
-        {/* Menú Desplegable */}
-        <div className="mb-6">
-          <div className="relative inline-block text-left">
-            <button className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">
-              Menú
-            </button>
-            <div className="absolute hidden bg-gray-800 text-white rounded shadow-lg z-10">
-              <a href="#informacion" className="block px-4 py-2 hover:bg-gray-700">Información</a>
-              <a href="#donaciones" className="block px-4 py-2 hover:bg-gray-700">Donaciones</a>
-              <a href="#novedades" className="block px-4 py-2 hover:bg-gray-700">Novedades</a>
-              <a href="#votar" className="block px-4 py-2 hover:bg-gray-700">Votar</a>
+          {/* Título */}
+          <h1 className="text-6xl font-pixel text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 filter drop-shadow-[0_0_5px_rgba(255,255,0,0.7)] mb-8">
+            LunaticMc
+          </h1>
+
+          {/* Redes Sociales */}
+          <div className="text-2xl font-pixel text-gray-300 mt-4 flex flex-col items-center">
+            <h2 className="text-3xl mb-4">Redes sociales</h2>
+            <div className="flex space-x-8">
+              <a href="https://www.youtube.com/@Lunaticminecraftsv" target="_blank" rel="noopener noreferrer" className="hover:text-red-400">
+                YouTube
+              </a>
+              <span className="cursor-default">Tienda</span>
+              <a href="https://discord.gg/Bj9uVBuW" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+                Discord
+              </a>
+              <a href="https://twitter.com/LunaticMc" target="_blank" rel="noopener noreferrer" className="hover:text-sky-400">
+                Twitter
+              </a>
             </div>
           </div>
-        </div>
-
-        {/* Redes Sociales */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-6">
-          <a
-            href="https://discord.gg/Bj9uVBuW"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full transition-colors"
-          >
-            <Image src="/icons/discord.svg" alt="Discord" width={24} height={24} />
-            Discord
-          </a>
-          <a
-            href="https://www.youtube.com/@Lunaticminecraftsv"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full transition-colors"
-          >
-            <Image src="/icons/youtube.svg" alt="YouTube" width={24} height={24} />
-            YouTube
-          </a>
-          <button
-            className="flex items-center gap-2 bg-gray-600 text-white px-4 py-2 rounded-full cursor-default"
-            disabled
-          >
-            <Image src="/icons/store.svg" alt="Tienda" width={24} height={24} />
-            Tienda
-          </button>
-        </div>
-
-        {/* Soporte */}
-        <div className="flex items-center gap-2 mt-4">
-          <Image src="/icons/support.png" alt="Soporte" width={32} height={32} />
-          <span className="text-lg font-pixel">Soporte</span>
         </div>
       </div>
 
