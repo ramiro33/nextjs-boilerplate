@@ -2,18 +2,15 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
-  // Estado para controlar qué sección mostrar
-  const [seccionActiva, setSeccionActiva] = useState("info");
+  const [seccionActiva, setSeccionActiva] = useState<string>("info");
 
-  // Función para cambiar sección con animación
+  const btnClass =
+    "px-5 py-3 bg-white rounded-lg shadow-md cursor-pointer text-cyan-700 font-semibold hover:bg-gray-100 hover:scale-105 transition-transform duration-300 active:scale-95";
+
   function cambiarSeccion(nombre: string) {
     setSeccionActiva(nombre);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
-
-  // Clases comunes para botones
-  const btnClass =
-    "px-5 py-3 bg-white rounded-lg shadow-md cursor-pointer text-cyan-700 font-semibold hover:bg-gray-100 hover:scale-105 transition-transform duration-300 active:scale-95";
 
   return (
     <main
@@ -22,7 +19,7 @@ export default function Home() {
         backgroundImage: `url('/icons/fondo.gif')`,
       }}
     >
-      {/* Overlay para contraste */}
+      {/* Fondo oscuro para contraste */}
       <div className="absolute inset-0 bg-black/60 -z-10"></div>
 
       {/* Header */}
@@ -31,8 +28,8 @@ export default function Home() {
           <Image
             src="/icons/logo.png"
             alt="LunaticMc Logo"
-            layout="fill"
-            objectFit="contain"
+            fill
+            style={{ objectFit: "contain" }}
             priority
           />
         </div>
@@ -73,9 +70,8 @@ export default function Home() {
         </button>
       </nav>
 
-      {/* Contenido: solo muestra la sección activa */}
+      {/* Contenido */}
       <section className="max-w-4xl text-center space-y-10 relative z-10 px-4">
-        {/* Información */}
         {seccionActiva === "info" && (
           <>
             <h2 className="text-4xl font-extrabold tracking-wide drop-shadow-lg animate-bounce">
@@ -87,7 +83,6 @@ export default function Home() {
           </>
         )}
 
-        {/* Experiencias Épicas */}
         {seccionActiva === "experiencias" && (
           <>
             <h2 className="text-4xl font-extrabold tracking-wide drop-shadow-lg animate-bounce">
@@ -102,7 +97,6 @@ export default function Home() {
           </>
         )}
 
-        {/* Donar */}
         {seccionActiva === "donar" && (
           <>
             <h2 className="text-4xl font-extrabold tracking-wide drop-shadow-lg animate-bounce">
@@ -122,7 +116,6 @@ export default function Home() {
           </>
         )}
 
-        {/* Redes */}
         {seccionActiva === "redes" && (
           <>
             <h2 className="text-4xl font-extrabold tracking-wide drop-shadow-lg animate-bounce">
@@ -154,5 +147,3 @@ export default function Home() {
     </main>
   );
 }
-
-
