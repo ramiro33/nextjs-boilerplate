@@ -13,7 +13,7 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      color: #ffffff;
+      color: #07f2ea;
       background: url('public/icons/fondo.gif') no-repeat center center fixed;
       background-size: cover;
       scroll-behavior: smooth;
@@ -119,7 +119,7 @@
     h2 {
       font-size: 2em;
       margin-bottom: 20px;
-      color: #00bfff;
+      color: #07f2ea;
     }
 
     p {
