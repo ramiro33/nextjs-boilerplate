@@ -2,102 +2,100 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen bg-gradient-to-br from-cyan-400 via-cyan-300 to-blue-500 text-white px-4 py-10 sm:py-20 flex flex-col items-center gap-16">
+      {/* Header */}
+      <section className="text-center">
+        <h1 className="text-5xl sm:text-6xl font-extrabold drop-shadow-lg">
+          🌙 LunaticMc
+        </h1>
+        <p className="mt-4 text-lg sm:text-xl max-w-xl mx-auto text-white/90">
+          Un servidor de Minecraft 1.20+ lleno de magia, aventuras y locura personalizada.
+        </p>
+        <div className="mt-6 bg-white/20 border border-white/40 backdrop-blur-md px-6 py-4 rounded-lg text-center shadow-lg">
+          <p className="text-white text-xl font-mono">IP:</p>
+          <p className="text-white font-bold text-2xl">play.lunaticmc.net</p>
+        </div>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* Navegación rápida */}
+      <nav className="flex flex-wrap gap-4 justify-center">
+        <a href="#info" className="px-4 py-2 bg-white text-cyan-700 font-semibold rounded hover:bg-gray-100 transition">Información</a>
+        <a href="#destacados" className="px-4 py-2 bg-white text-cyan-700 font-semibold rounded hover:bg-gray-100 transition">Destacados</a>
+        <a href="#donar" className="px-4 py-2 bg-white text-cyan-700 font-semibold rounded hover:bg-gray-100 transition">Donar</a>
+        <a href="#social" className="px-4 py-2 bg-white text-cyan-700 font-semibold rounded hover:bg-gray-100 transition">Redes</a>
+      </nav>
+
+      {/* Información */}
+      <section id="info" className="max-w-3xl text-center space-y-4">
+        <h2 className="text-3xl font-bold">📜 Información</h2>
+        <p>
+          LunaticMc ofrece un mundo totalmente único. Misiones, economía, magias, tridentes y un sistema de progresión como ningún otro. Ideal para jugadores que buscan algo distinto.
+        </p>
+      </section>
+
+      {/* Destacados */}
+      <section id="destacados" className="max-w-3xl text-center space-y-4">
+        <h2 className="text-3xl font-bold">⭐ Destacados</h2>
+        <ul className="list-disc text-left mx-auto max-w-md space-y-2">
+          <li>🔮 Sistema de Magia y Hechizos</li>
+          <li>⚔️ Eventos PvP/PvE cada semana</li>
+          <li>🎯 Rachas, rangos y recompensas diarias</li>
+          <li>🛒 Tienda y economía personalizada</li>
+        </ul>
+      </section>
+
+      {/* Donar */}
+      <section id="donar" className="max-w-3xl text-center space-y-4">
+        <h2 className="text-3xl font-bold">💰 Donar</h2>
+        <p>
+          Apoyá al servidor y desbloqueá rangos exclusivos, efectos especiales y recompensas únicas.
+        </p>
+        <a
+          href="https://tudirecciondetienda.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-2 bg-white text-cyan-700 font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition"
+        >
+          Ir a la Tienda
+        </a>
+      </section>
+
+      {/* Redes Sociales */}
+      <section id="social" className="text-center space-y-6">
+        <h2 className="text-3xl font-bold">📢 Nuestras redes</h2>
+        <div className="flex flex-wrap gap-6 justify-center items-center">
+          {/* Discord */}
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://discord.gg/Bj9uVBuW"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex items-center gap-3 bg-white text-cyan-700 font-semibold px-5 py-3 rounded-lg hover:bg-gray-100 transition"
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/icons/discord.svg"
+              alt="Discord"
+              width={24}
+              height={24}
             />
-            Deploy now
+            Discord
           </a>
+          {/* YouTube */}
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://www.youtube.com/@Lunaticminecraftsv"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex items-center gap-3 bg-white text-cyan-700 font-semibold px-5 py-3 rounded-lg hover:bg-gray-100 transition"
           >
-            Read our docs
+            <Image
+              src="/icons/youtube.svg"
+              alt="YouTube"
+              width={24}
+              height={24}
+            />
+            YouTube
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+    </main>
   );
 }
